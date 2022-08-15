@@ -1,4 +1,4 @@
-import 'package:chemical_prog3_aval/elements.dart';
+import 'package:chemical_prog2_aval3/elements.dart';
 
 class Atom {
   late String _symbol;

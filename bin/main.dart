@@ -16,8 +16,8 @@
  * adaptarem ao seu projeto
  */
 import 'dart:io';
-import 'package:chemical_prog3_aval/elements.dart';
-import 'package:chemical_prog3_aval/molecule.dart';
+import 'package:chemical_prog2_aval3/elements.dart';
+import 'package:chemical_prog2_aval3/molecule.dart';
 
 /*
  * Exibe texto tabulado no console
