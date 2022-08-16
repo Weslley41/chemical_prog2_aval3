@@ -9,8 +9,8 @@
 ## to compare outputs in Linux with [diff](https://man.archlinux.org/man/diff.1.en)
 for see the differences
 
-`diff output.txt <(dart run bin/main.dart)`
+`diff examples/output.txt <(dart run bin/main.dart)`
 
 for compare outputs in two columns (side-by-side)
 
-`diff output.txt <(dart run bin/main.dart) -y`
+`diff examples/output.txt <(dart run bin/main.dart) -y`
