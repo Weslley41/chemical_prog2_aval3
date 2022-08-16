@@ -1,9 +1,7 @@
 import 'dart:io';
 
 class Element {
-  final String _symbol;
-  final String _name;
-  final String _latinName;
+  final String _symbol, _name, _latinName;
   final int _weight;
 
   Element({
@@ -29,11 +27,10 @@ class Elements extends Iterable {
   final List<Element> _elements = [];
 
   Elements() {
-    File file = File('elements.csv');
-    List<String> fileLines = file.readAsLinesSync();
+    List<String> file = File('elements.csv').readAsLinesSync();
 
-    for (var i = 1; i < fileLines.length; i++) {
-      List<String> data = fileLines[i].split(',');
+    for (var i = 1; i < file.length; i++) {
+      List<String> data = file[i].split(',');
 
       _elements.add(
         Element(simbol: data[1], name: data[2], latinName: data[3], weight: int.parse(data[0]))
@@ -44,10 +41,10 @@ class Elements extends Iterable {
   @override
   Iterator<Element> get iterator => _elements.iterator;
 
-  bool hasElement(symbol) {
+  Element? hasElement(symbol) {
     for (var element in _elements) {
-      if (element.symbol == symbol) return true;
+      if (element.symbol == symbol) return element;
     }
-    return false;
+    return null;
   }
 }
