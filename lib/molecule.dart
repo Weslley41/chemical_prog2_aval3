@@ -11,13 +11,16 @@ class Molecule implements Comparable<Molecule> {
   }
 
   set formula(String formula) {
-    if (formula.isEmpty) throw Exception('Invalid formula: $formula');
+    if (formula.isEmpty) {
+      throw Exception('Invalid formula: $formula');
+    }
+
     _formula = formula;
-    final regex = RegExp('(?<atom>[A-Z][a-z]?d*)(?<count>[0-9]*)');
+    final regex = RegExp('(?<symbol>[A-Z][a-z]?d*)(?<count>[0-9]*)');
     final atoms = regex.allMatches(formula);
 
     for (var atom in atoms) {
-      String? atomSymbol = atom.namedGroup('atom');
+      String? atomSymbol = atom.namedGroup('symbol');
       int atomCount;
 
       switch (atom.namedGroup('count')) {
