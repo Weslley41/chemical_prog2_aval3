@@ -4,7 +4,7 @@
 - Weslley de Jesus
 
 ## to run program
-`dart run bin/main.dart`
+`dart pub get && dart run bin/main.dart`
 
 ## to compare outputs in Linux with [diff](https://man.archlinux.org/man/diff.1.en)
 for see the differences
