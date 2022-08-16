@@ -26,7 +26,9 @@ class Element {
 class Elements extends Iterable {
   final List<Element> _elements = [];
 
-  Elements() {
+  static final Elements _instance = Elements._internal();
+  factory Elements() => _instance;
+  Elements._internal() {
     List<String> file = File('elements.csv').readAsLinesSync();
 
     for (var i = 1; i < file.length; i++) {
