@@ -118,6 +118,11 @@ Yb     Itérbio      Ytterbium        70
 Zn     Zinco        Zincum           30
 Zr     Zircônio     Zirconium        40
 ----------------------------------------
+Fórmula: C6H12O6
+Peso   : 96
+Fórmula: CH3COOH
+Peso   : 32
+----------------------------------------
 FORMULA        WEIGHT
 F                   9
 Br                 35

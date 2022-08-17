@@ -1,13 +1,13 @@
 // ignore_for_file: avoid_function_literals_in_foreach_calls
 
 /*
- * ATENÇÃO: O CÓDIGO DESTE ARQUIVO SERÁ USADO PARA TESTAR
+ * ATENÇÃO O CÓDIGO DESTE ARQUIVO SERÁ USADO PARA TESTAR
  * SUA IMPLEMENTAÇÃO.
  *
  * NÃO ALTERE AS FUNÇÕES NELE EXISTENTES.
  *
  * SEU CÓDIGO DEVERÁ SE ADAPTAR ÀS CHAMADAS
- * AQUI CODIFICADAS.
+ * AQUI CODIFICADOS.
  *
  */
 
@@ -18,6 +18,14 @@
 import 'dart:io';
 import 'package:chemical_prog2_aval3/elements.dart';
 import 'package:chemical_prog2_aval3/molecule.dart';
+
+/*
+ * Exibe uma linha na tela
+ */
+void line([int size = 40]) {
+  stdout.write('-' * size);
+  stdout.write('\n');
+}
 
 /*
  * Exibe texto tabulado no console
@@ -66,7 +74,7 @@ void showElements() {
       printTabbed(text, tabs);
     },
   );
-  print('-' * 40);
+  line();
 }
 
 /*
@@ -94,7 +102,32 @@ void showMolecules(List<Molecule> molecules) {
   for (var molecule in molecules) {
     printTabbed('${molecule.formula}\t${molecule.weight}', tabs);
   }
-  print('-' * 40);
+  line();
+}
+
+/*
+ * Test a criação e alteração de uma molécula
+ * for meio do getter/setter "formula"
+ */
+void testMolecule() {
+  Molecule molecule;
+
+  // Cria molécula
+  molecule = Molecule(
+    formula: 'C6H12O6',
+    name: 'Molécula',
+  );
+
+  print('Fórmula: ${molecule.formula}');
+  print('Peso   : ${molecule.weight}');
+
+  // Altera molécula
+  molecule.formula = 'CH3COOH';
+
+  print('Fórmula: ${molecule.formula}');
+  print('Peso   : ${molecule.weight}');
+
+  line();
 }
 
 /*
@@ -120,6 +153,9 @@ void createInvalidMolecule(String formula, String name) {
 void main() {
   // Exibe uma tabela com todos os elementos químicos
   showElements();
+
+  // Testa a criação e alteração de uma instância de molécula
+  testMolecule();
 
   // Lista de moléculas válidas
   final molecules = [
