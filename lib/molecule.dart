@@ -3,7 +3,7 @@ import 'package:chemical_prog2_aval3/atom.dart';
 class Molecule implements Comparable<Molecule> {
   late String _formula, _name;
   final List<Map<String, dynamic>> _atoms = [];
-  int _weight = 0;
+  late int _weight;
 
   Molecule({required String formula, required String name}) {
     this.formula = formula;
@@ -15,6 +15,7 @@ class Molecule implements Comparable<Molecule> {
       throw Exception('Invalid formula: $formula');
     }
 
+    _weight = 0;
     _formula = formula;
     final regex = RegExp('(?<symbol>[A-Z][a-z]?d*)(?<count>[0-9]*)');
     final atoms = regex.allMatches(formula);
